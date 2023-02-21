@@ -1,0 +1,211 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url(img/2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh
+}
+
+nav {
+  padding: 30px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: rgb(255, 255, 255);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav .nav-left {
+  flex: 1;
+  text-align: left;
+}
+
+nav a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  margin-right: 20px;
+}
+
+.nav-items {
+  transition: color 0.3s ease-out;
+  position: relative;
+  padding: 5px 0;
+}
+
+.nav-items::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #762222;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease-out;
+}
+
+.nav-items:hover {
+  color: #fff;
+}
+
+.nav-items:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.trilogy-text {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  font-family: "Inter";
+  color: #fff;
+  padding: 10px;
+}
+
+.trilogy-text h1 {
+  font-weight: bold;
+}
+
+.trilogy-text p {
+  padding-top: 10px;
+}
+
+.container {
+  position: absolute;
+  padding: 30px;
+  bottom: 5px;
+  right: 30px;
+  justify-content: flex-end;
+}
+
+.container .title {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  padding-bottom: 20px;
+  position: relative;
+  margin-left: 30px;
+  color: #fff;
+}
+
+.container h2 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: center;
+  font-size: small;
+}
+
+.container .container-poster {
+  display: flex;
+}
+
+.poster-card {
+  width: 160px;
+  height: 263px;
+  overflow: hidden;
+  position: relative;
+  margin-left: 30px;
+}
+
+.poster-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.poster-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.poster-card:hover .poster-info {
+  display: flex;
+}
+
+/* ellipse 2 */
+.ellipses-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 70px;
+  left: 30px;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.ellipse {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  /* overflow: hidden; */
+  /* background-color: #fff; */
+  margin: 10px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.ellipse:hover .ellipse-text {
+  display: block;
+}
+
+.ellipse-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.ellipse-text {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  position: absolute;
+  left: 60px;
+  width: 150px;
+  text-align: left;
+  display: none;
+  transform: translate(0, -50%);
+  top: 50%;
+  animation: moveFromCircle 0.5s ease-in-out forwards;
+}
+
+.ellipse-text h3 {
+  margin: 0;
+  color: #fff;
+}
+
+.ellipse-text p {
+  margin: 0;
+  color: #fff;
+  font-size: x-small;
+}
+
+@keyframes moveFromCircle {
+  from {
+    opacity: 0;
+    transform: translate(-5%, -50%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  /* styles for screens with a width of 767px or less */
+  }
+  
+  @media only screen and (min-width: 768px) {
+  /* styles for screens with a width of 768px or greater */
+  }
